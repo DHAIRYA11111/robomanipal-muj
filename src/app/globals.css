@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================================================================
+   RoboManipal MUJ — Global Design System
+   Luxury dark theme · futuristic robotics aesthetic
+   =========================================================================== */
+
+:root {
+  --cotton: #ede9dd;
+  --cherry: #821010;
+  --maroon: #5b0300;
+  --noir: #1f1717;
+  --noir-900: #140e0e;
+
+  --header-h: 84px;
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    @apply border-noir-600/40;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: auto; /* Lenis handles smoothing */
+    background: var(--noir-900);
+  }
+
+  body {
+    @apply bg-noir-900 text-cotton font-sans antialiased;
+    overflow-x: hidden;
+    font-feature-settings: "ss01", "cv01";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--cherry);
+    color: var(--cotton);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--noir-900);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #821010, #5b0300);
+    border-radius: 99px;
+    border: 2px solid var(--noir-900);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b81818;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--cherry);
+    outline-offset: 3px;
+  }
+}
+
+/* ===========================================================================
+   Reusable component utilities
+   =========================================================================== */
+@layer components {
+  .container-wide {
+    @apply mx-auto w-full max-w-wide px-6 md:px-10 lg:px-16;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.35em] text-cherry-glow/90;
+  }
+
+  .text-gradient {
+    background: linear-gradient(120deg, #ede9dd 0%, #ede9dd 40%, #b81818 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.4px rgba(237, 233, 221, 0.35);
+  }
+
+  .glass {
+    background: linear-gradient(
+      145deg,
+      rgba(237, 233, 221, 0.06),
+      rgba(237, 233, 221, 0.015)
+    );
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(237, 233, 221, 0.08);
+  }
+
+  .glass-hover {
+    transition: all 0.5s var(--ease-smooth);
+  }
+  .glass-hover:hover {
+    border-color: rgba(184, 24, 24, 0.6);
+    background: linear-gradient(
+      145deg,
+      rgba(130, 16, 16, 0.14),
+      rgba(237, 233, 221, 0.02)
+    );
+  }
+
+  /* Animated robotics grid background */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(237, 233, 221, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(237, 233, 221, 0.045) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 40%, #000 30%, transparent 75%);
+  }
+
+  .dot-bg {
+    background-image: radial-gradient(
+      rgba(237, 233, 221, 0.12) 1px,
+      transparent 1px
+    );
+    background-size: 26px 26px;
+  }
+
+  /* Cherry radial glow */
+  .glow-cherry {
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(130, 16, 16, 0.55) 0%,
+      rgba(91, 3, 0, 0.18) 35%,
+      transparent 70%
+    );
+  }
+
+  .btn {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden
+      rounded-full px-7 py-3.5 font-mono text-xs uppercase tracking-[0.18em]
+      transition-all duration-500;
+  }
+  .btn-primary {
+    @apply bg-cherry text-cotton;
+  }
+  .btn-primary:hover {
+    @apply bg-cherry-glow;
+    box-shadow: 0 0 40px -8px rgba(184, 24, 24, 0.8);
+  }
+  .btn-ghost {
+    @apply border border-cotton/25 text-cotton;
+  }
+  .btn-ghost:hover {
+    @apply border-cotton/70 bg-cotton/5;
+  }
+
+  .card-line {
+    @apply relative border border-cotton/10 bg-noir-800/40 transition-all duration-500;
+  }
+  .card-line:hover {
+    @apply border-cherry-glow/50 bg-noir-700/40;
+  }
+
+  .link-underline {
+    @apply relative;
+  }
+  .link-underline::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-px w-0 bg-cherry-glow transition-all duration-500;
+  }
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+}
+
+/* ===========================================================================
+   Effects
+   =========================================================================== */
+@layer utilities {
+  /* Film grain overlay */
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+  }
+  .mask-fade-r {
+    mask-image: linear-gradient(to right, #000 80%, transparent 100%);
+  }
+
+  .perspective {
+    perspective: 1200px;
+  }
+
+  .clip-slant {
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  }
+}
+
+/* Hide the native cursor only on devices that have a precise pointer */
+@media (hover: hover) and (pointer: fine) {
+  .cursor-none-desktop,
+  .cursor-none-desktop * {
+    cursor: none;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
