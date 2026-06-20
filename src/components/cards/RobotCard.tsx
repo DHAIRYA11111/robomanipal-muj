@@ -1,20 +1,18 @@
 import Link from "next/link";
-import { Goal, Route, Plane, Radar, Bot, Atom, ArrowUpRight } from "lucide-react";
+import { Goal, Route, Plane, Bot, Swords, ArrowUpRight } from "lucide-react";
 import type { Robot } from "@/data/robots";
 
 const ICONS = {
   "Robo Soccer": Goal,
   "Line Follower": Route,
-  Drone: Plane,
-  "Autonomous System": Radar,
-  Manipulator: Bot,
-  Experimental: Atom,
+  "Robo Wars": Swords,
+  "Multifunctional Drones": Plane,
+  "Robotic Arm": Bot,
 } as const;
 
 export default function RobotCard({ robot }: { robot: Robot }) {
   const Icon = ICONS[robot.category] ?? Bot;
-  const active =
-    robot.status === "Active" || robot.status === "Competition Ready";
+  const active = robot.status === "Active";
 
   return (
     <Link

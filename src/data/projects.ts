@@ -35,7 +35,7 @@ export const PROJECTS: Project[] = [
       "End-to-end training-to-deployment toolchain",
     ],
     outcome:
-      "Demonstrated 18 FPS detection on a sub-2 W embedded target, now reused across drone and AGV platforms.",
+      "Demonstrated 18 FPS detection on a sub-2 W embedded target, now reused across drone and robotic-arm platforms.",
     team: ["Development Team", "Research Team"],
   },
   {
@@ -68,13 +68,13 @@ export const PROJECTS: Project[] = [
       "A real-time hand-gesture interface that maps recognised gestures to robot commands.",
     overview: [
       "Gesture Control AI turns a webcam into a robot controller. A hand-landmark model extracts 21 keypoints per frame; a lightweight temporal classifier maps gesture sequences to discrete commands.",
-      "The system was integrated with the Helix arm and Pathfinder AGV, letting an operator drive and command robots with natural hand motions and no physical controller.",
+      "The system was integrated with the Robotic Arm, letting an operator command a robot with natural hand motions and no physical controller.",
     ],
     tech: ["MediaPipe", "PyTorch", "Python", "ROS 2", "OpenCV"],
     features: [
       "21-point hand landmark tracking",
       "Temporal gesture-sequence classifier",
-      "Live integration with arm & AGV",
+      "Live integration with robotic-arm controls",
     ],
     outcome:
       "Achieved 96% gesture classification accuracy in live demos at the chapter showcase.",

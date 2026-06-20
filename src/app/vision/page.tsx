@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
@@ -9,7 +7,7 @@ import { pad } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Vision",
   description:
-    "The RoboManipal MUJ vision — the future of robotics, our research goals, innovation roadmap and long-term objectives.",
+    "The RoboManipal MUJ vision — the future of robotics and our research goals.",
 };
 
 const FRONTIERS = [
@@ -38,43 +36,6 @@ const GOALS = [
     title: "Human-Robot Collaboration",
     text: "Interfaces and behaviours that let people and machines work side by side, safely.",
   },
-];
-
-const ROADMAP = [
-  {
-    phase: "Now",
-    window: "2026",
-    items: [
-      "AGV SLAM & navigation platform",
-      "Decentralised swarm testbed",
-      "Sub-2W edge-AI perception",
-    ],
-  },
-  {
-    phase: "Next",
-    window: "2027",
-    items: [
-      "Multi-robot coordination",
-      "Mobile manipulation",
-      "First peer-reviewed publication",
-    ],
-  },
-  {
-    phase: "Horizon",
-    window: "2028+",
-    items: [
-      "Autonomous lab-assistant fleet",
-      "Hardened sim-to-real pipeline",
-      "National research presence",
-    ],
-  },
-];
-
-const OBJECTIVES = [
-  "Become a nationally recognised student robotics research community.",
-  "Publish work that is cited beyond the walls of the university.",
-  "Send graduates into the world's leading robotics labs and companies.",
-  "Make Manipal University Jaipur synonymous with student-led autonomy.",
 ];
 
 export default function VisionPage() {
@@ -185,82 +146,6 @@ export default function VisionPage() {
         </div>
       </section>
 
-      {/* innovation roadmap */}
-      <section className="container-wide py-24 md:py-32">
-        <SectionHeading
-          index="03"
-          eyebrow="Innovation Roadmap"
-          title={
-            <>
-              The path <span className="text-cherry-glow">forward.</span>
-            </>
-          }
-          className="mb-16"
-        />
-        <div className="grid gap-6 md:grid-cols-3">
-          {ROADMAP.map((r, i) => (
-            <Reveal key={r.phase} delay={i * 0.08}>
-              <div className="relative h-full border border-cotton/10 bg-noir-800/40 p-8 transition-all duration-500 hover:border-cherry-glow/50">
-                <div className="flex items-baseline justify-between">
-                  <span className="font-display text-2xl font-bold uppercase tracking-tight text-cherry-glow">
-                    {r.phase}
-                  </span>
-                  <span className="font-mono text-xs tracking-[0.2em] text-cotton/40">
-                    {r.window}
-                  </span>
-                </div>
-                <ul className="mt-8 space-y-4">
-                  {r.items.map((it) => (
-                    <li
-                      key={it}
-                      className="flex items-start gap-3 text-sm text-cotton/65"
-                    >
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cherry-glow" />
-                      {it}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* long-term objectives */}
-      <section className="relative overflow-hidden border-t border-cotton/10 bg-noir-800/30">
-        <div className="container-wide py-24 md:py-32">
-          <SectionHeading
-            index="04"
-            eyebrow="Long-Term Objectives"
-            title={
-              <>
-                Where this <span className="text-cherry-glow">leads.</span>
-              </>
-            }
-            className="mb-14"
-          />
-          <div className="space-y-2">
-            {OBJECTIVES.map((o, i) => (
-              <Reveal key={i} delay={i * 0.05}>
-                <div className="group flex items-center gap-6 border-b border-cotton/10 py-7 transition-colors hover:border-cherry-glow/40">
-                  <span className="font-mono text-sm text-cotton/30">
-                    {pad(i + 1)}
-                  </span>
-                  <p className="text-xl font-medium leading-tight text-cotton/85 transition-colors group-hover:text-cotton md:text-3xl">
-                    {o}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal className="mt-16">
-            <Link href="/contact" className="btn btn-primary">
-              Build It With Us <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
     </>
   );
 }

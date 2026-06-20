@@ -3,6 +3,8 @@ import {
   ACHIEVEMENTS,
   ACHIEVEMENT_CATEGORIES,
 } from "@/data/achievements";
+import { ROBOTS } from "@/data/robots";
+import { MEMBERS } from "@/data/team";
 import AchievementTile from "@/components/cards/AchievementTile";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -13,14 +15,18 @@ import { pad } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Achievements",
   description:
-    "Competitions won and participated, workshops conducted, research achievements and event highlights from RoboManipal MUJ.",
+    "Competition wins from RoboManipal MUJ.",
 };
 
 const COUNTERS = [
-  { value: 3, suffix: "", label: "Competitions Won" },
-  { value: 5, suffix: "", label: "Competitions Entered" },
-  { value: 17, suffix: "", label: "Research Papers" },
-  { value: 150, suffix: "+", label: "Students Trained" },
+  { value: ACHIEVEMENTS.length, suffix: "", label: "Competition Wins" },
+  {
+    value: new Set(ACHIEVEMENTS.map((achievement) => achievement.year)).size,
+    suffix: "",
+    label: "Years Recorded",
+  },
+  { value: ROBOTS.length, suffix: "", label: "Robotic Platforms" },
+  { value: MEMBERS.length, suffix: "", label: "Team Members" },
 ];
 
 export default function AchievementsPage() {
@@ -38,7 +44,7 @@ export default function AchievementsPage() {
             <span className="text-cherry-glow">podium.</span>
           </>
         }
-        description="Competitions won and entered, workshops that trained hundreds, research presented, and the events that put RoboManipal on the map."
+        description="A record of RoboManipal's competition wins."
       />
 
       {/* counters */}

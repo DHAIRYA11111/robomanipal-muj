@@ -4,18 +4,17 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ROBOTS } from "@/data/robots";
 import { PROJECTS } from "@/data/projects";
-import { PAPERS } from "@/data/research";
 import RobotCard from "@/components/cards/RobotCard";
 import ProjectCard from "@/components/cards/ProjectCard";
-import PaperCard from "@/components/cards/PaperCard";
+import ResearchComingSoon from "@/components/work/ResearchComingSoon";
 import { cn } from "@/lib/utils";
 
 type TabId = "robots" | "projects" | "research";
 
-const TABS: { id: TabId; label: string; count: number; note: string }[] = [
-  { id: "robots", label: "Robots", count: ROBOTS.length, note: "Autonomous machines" },
-  { id: "projects", label: "Projects", count: PROJECTS.length, note: "Systems & software" },
-  { id: "research", label: "Research Papers", count: PAPERS.length, note: "Technical reports" },
+const TABS: { id: TabId; label: string; count: number | string }[] = [
+  { id: "robots", label: "Robots", count: ROBOTS.length },
+  { id: "projects", label: "Projects", count: PROJECTS.length },
+  { id: "research", label: "Research Papers", count: "Soon" },
 ];
 
 export default function WorkView() {
@@ -98,11 +97,7 @@ export default function WorkView() {
               </div>
             )}
             {tab === "research" && (
-              <div className="grid gap-6 md:grid-cols-2">
-                {PAPERS.map((p) => (
-                  <PaperCard key={p.slug} paper={p} />
-                ))}
-              </div>
+              <ResearchComingSoon />
             )}
           </motion.div>
         </AnimatePresence>

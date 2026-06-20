@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -20,7 +20,7 @@ const PANELS: Panel[] = [
   {
     chapter: "Who We Are",
     title: "Engineering Intelligent Machines",
-    body: "RoboManipal MUJ is a student-driven robotics & research community at Manipal University Jaipur — designing, building and publishing the machines of tomorrow.",
+    body: "RoboManipal MUJ is a student-driven robotics community at Manipal University Jaipur — designing and building the machines of tomorrow.",
     href: "/about",
     cta: "About Us",
   },
@@ -34,9 +34,9 @@ const PANELS: Panel[] = [
   {
     chapter: "Discover",
     title: "Research & Innovation",
-    body: "Our research team works at the frontier of autonomy, edge AI and swarm robotics, turning hard questions into published technical reports.",
+    body: "Our research papers are being prepared for publication. Explore the work-in-progress section to see what is coming next.",
     href: "/work#research",
-    cta: "Read Research",
+    cta: "Coming Soon",
   },
   {
     chapter: "Build",
@@ -48,21 +48,21 @@ const PANELS: Panel[] = [
   {
     chapter: "Machines",
     title: "Featured Robots",
-    body: "Omnidirectional soccer bots, blistering line followers, GPS-denied drones, autonomous ground vehicles and robotic arms.",
+    body: "RoboSoccer, RoboWars, line-following, multifunctional drone and robotic-arm platforms.",
     href: "/work#robots",
     cta: "Meet The Robots",
   },
   {
     chapter: "Publish",
     title: "Research Papers",
-    body: "Technical reports across visual-inertial odometry, model compression, swarm consensus and sim-to-real learning.",
+    body: "Research papers are coming soon. We are preparing this section for future publications.",
     href: "/work#research",
-    cta: "Browse Papers",
+    cta: "Coming Soon",
   },
   {
     chapter: "Win",
     title: "Achievements",
-    body: "Podium finishes, workshops that onboard hundreds of students, and a research symposium that defines who we are.",
+    body: "A record of RoboManipal's competition wins and the events that mark its journey.",
     href: "/achievements",
     cta: "Our Wins",
   },
@@ -82,7 +82,9 @@ export default function HorizontalStory() {
   const progressRef = useRef<HTMLDivElement>(null);
   const counterRef = useRef<HTMLSpanElement>(null);
 
-  useEffect(() => {
+  // ScrollTrigger's pinning moves this section into a spacer. Its cleanup must
+  // happen before React removes the home page during a route transition.
+  useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const mm = gsap.matchMedia();
 

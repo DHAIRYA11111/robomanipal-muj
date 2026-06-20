@@ -9,7 +9,7 @@ export const SITE = {
   email: "robomanipal@muj.manipal.edu",
   location: "Manipal University Jaipur, Dehmi Kalan, Jaipur, Rajasthan 303007",
   socials: {
-    instagram: "https://instagram.com/robomanipal",
+    instagram: "https://www.instagram.com/robomanipal_muj/",
     linkedin: "https://linkedin.com/company/robomanipal-muj",
     github: "https://github.com/robomanipal",
     email: "mailto:robomanipal@muj.manipal.edu",
@@ -27,8 +27,7 @@ export const NAV_LINKS = [
 ] as const;
 
 export const STATS = [
-  { label: "Projects Completed", value: 48, suffix: "+" },
-  { label: "Research Papers Published", value: 17, suffix: "" },
-  { label: "Competitions Participated", value: 32, suffix: "+" },
-  { label: "Community Members", value: 120, suffix: "+" },
+  { label: "Robotic Platforms", value: 5, suffix: "" },
+  { label: "Competition Wins", value: 3, suffix: "" },
+  { label: "Team Members", value: 6, suffix: "" },
 ] as const;

@@ -16,7 +16,7 @@ const CHANNELS = [
   {
     icon: Instagram,
     label: "Instagram",
-    value: "@robomanipal",
+    value: "@robomanipal_muj",
     href: SITE.socials.instagram,
   },
   {

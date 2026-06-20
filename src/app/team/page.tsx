@@ -4,8 +4,7 @@ import TeamView from "@/components/team/TeamView";
 
 export const metadata: Metadata = {
   title: "Team",
-  description:
-    "Meet the faculty mentors, core team, robotics, research, development teams and alumni behind RoboManipal MUJ.",
+  description: "Meet the RoboManipal MUJ team.",
 };
 
 export default function TeamPage() {
@@ -21,7 +20,7 @@ export default function TeamPage() {
             the <span className="text-cherry-glow">machines.</span>
           </>
         }
-        description="Faculty mentors, core leadership, and the robotics, research and development engineers who design, build and publish — plus the alumni who started it all."
+        description="Meet the people building RoboManipal MUJ."
       />
       <TeamView />
     </>

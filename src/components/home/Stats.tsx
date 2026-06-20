@@ -11,7 +11,7 @@ export default function Stats() {
         <span className="eyebrow">By The Numbers</span>
       </Reveal>
 
-      <div className="grid grid-cols-2 gap-px overflow-hidden border border-cotton/10 bg-cotton/10 md:grid-cols-4">
+      <div className="grid grid-cols-1 gap-px overflow-hidden border border-cotton/10 bg-cotton/10 sm:grid-cols-3">
         {STATS.map((s, i) => (
           <div
             key={s.label}

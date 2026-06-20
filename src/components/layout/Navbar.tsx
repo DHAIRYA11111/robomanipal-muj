@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -8,7 +9,6 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/data/site";
 import { getLenis } from "@/components/providers/SmoothScrollProvider";
 import { cn } from "@/lib/utils";
-import RobotMark from "@/components/ui/RobotMark";
 import Magnetic from "@/components/ui/Magnetic";
 
 function isActive(pathname: string, href: string) {
@@ -48,29 +48,47 @@ export default function Navbar() {
             : "border-b border-transparent bg-transparent",
         )}
       >
-        <nav className="container-wide flex h-16 items-center justify-between md:h-20">
+        <nav className="container-wide relative flex h-20 items-center justify-between md:h-28">
           <Link
             href="/"
-            className="group flex items-center gap-3"
+            className="group hidden w-56 items-center justify-center md:flex"
             aria-label={`${SITE.name} home`}
           >
-            <RobotMark className="h-7 w-7 text-cherry-glow transition-transform duration-500 group-hover:rotate-[30deg]" />
-            <span className="font-display text-base font-bold uppercase leading-none tracking-tight md:text-lg">
-              Robo<span className="text-cherry-glow">Manipal</span>
-              <span className="ml-1 font-mono text-[10px] tracking-[0.25em] text-cotton/40">
-                MUJ
-              </span>
-            </span>
+            <Image
+              src="/robomanipal-muj-mark.png"
+              alt=""
+              width={170}
+              height={170}
+              priority
+              className="h-[95px] w-[95px] object-contain transition-transform duration-500 group-hover:rotate-[30deg]"
+            />
           </Link>
 
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            className="absolute left-1/2 flex -translate-x-1/2 items-center justify-center md:hidden"
+          >
+            <Image
+              src="/robomanipal-muj-mark.png"
+              alt=""
+              width={170}
+              height={170}
+              priority
+              className="h-16 w-16 object-contain"
+            />
+          </button>
+
           {/* desktop links */}
-          <ul className="hidden items-center gap-7 lg:flex">
+          <ul className="hidden flex-1 items-center justify-evenly px-4 xl:flex">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   className={cn(
-                    "link-underline font-mono text-[11px] uppercase tracking-[0.2em] transition-colors",
+                    "link-underline font-mono text-xs uppercase tracking-[0.18em] transition-colors",
                     isActive(pathname, link.href)
                       ? "text-cherry-glow"
                       : "text-cotton/70 hover:text-cotton",
@@ -83,7 +101,7 @@ export default function Navbar() {
           </ul>
 
           <div className="flex items-center gap-3">
-            <Magnetic className="hidden sm:block">
+            <Magnetic className="hidden xl:block">
               <Link
                 href="/contact"
                 data-cursor="Join"
@@ -97,7 +115,7 @@ export default function Navbar() {
               type="button"
               onClick={() => setOpen((v) => !v)}
               aria-label="Toggle menu"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-cotton/15 text-cotton transition-colors hover:border-cherry-glow/60 lg:hidden"
+              className="hidden h-11 w-11 items-center justify-center rounded-full border border-cotton/15 text-cotton transition-colors hover:border-cherry-glow/60 md:flex xl:hidden"
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -109,7 +127,7 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-[7999] flex flex-col bg-noir-900/97 px-6 pb-10 pt-24 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-[7999] flex flex-col bg-noir-900/97 px-6 pb-10 pt-24 backdrop-blur-xl xl:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

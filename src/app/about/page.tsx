@@ -65,7 +65,7 @@ const TIMELINE = [
   {
     year: "2022",
     title: "First Signals",
-    text: "The community files its first technical reports and enters its first competitions, learning to build under pressure.",
+    text: "The community enters its first competitions, learning to build under pressure.",
   },
   {
     year: "2023",
@@ -85,7 +85,7 @@ const TIMELINE = [
   {
     year: "2026",
     title: "Scaling Autonomy",
-    text: "AGV and swarm research platforms come online as the community grows past 120 active members.",
+    text: "New robotic platforms come online as the community continues to grow.",
   },
 ];
 
@@ -257,7 +257,7 @@ export default function AboutPage() {
           }
           className="mb-14"
         />
-        <div className="grid grid-cols-2 gap-px overflow-hidden border border-cotton/10 bg-cotton/10 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-px overflow-hidden border border-cotton/10 bg-cotton/10 sm:grid-cols-3">
           {STATS.map((s, i) => (
             <div key={s.label} className="bg-noir-900 p-8 md:p-10">
               <span className="font-mono text-xs text-cotton/30">

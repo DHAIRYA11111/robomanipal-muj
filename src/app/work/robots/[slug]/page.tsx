@@ -5,9 +5,8 @@ import {
   Goal,
   Route,
   Plane,
-  Radar,
   Bot,
-  Atom,
+  Swords,
   ArrowLeft,
   ArrowRight,
   Check,
@@ -20,10 +19,9 @@ import CoreVisual from "@/components/ui/CoreVisual";
 const ICONS = {
   "Robo Soccer": Goal,
   "Line Follower": Route,
-  Drone: Plane,
-  "Autonomous System": Radar,
-  Manipulator: Bot,
-  Experimental: Atom,
+  "Robo Wars": Swords,
+  "Multifunctional Drones": Plane,
+  "Robotic Arm": Bot,
 } as const;
 
 export const dynamicParams = false;
@@ -146,7 +144,7 @@ export default function RobotDetailPage({
           </ul>
         </div>
 
-        {/* right: specs / stack / teams */}
+        {/* right: specifications and stack */}
         <aside className="space-y-12">
           <div>
             <h3 className="eyebrow mb-5">Specifications</h3>
@@ -179,21 +177,6 @@ export default function RobotDetailPage({
                 >
                   {t}
                 </span>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="eyebrow mb-5">Built By</h3>
-            <div className="flex flex-wrap gap-2">
-              {robot.team.map((t) => (
-                <Link
-                  key={t}
-                  href="/team"
-                  className="rounded-full border border-cherry-glow/30 px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-cherry-glow/90 transition-colors hover:bg-cherry-glow/10"
-                >
-                  {t}
-                </Link>
               ))}
             </div>
           </div>

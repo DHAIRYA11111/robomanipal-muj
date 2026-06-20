@@ -22,7 +22,7 @@ export default function AchievementShowcase() {
                 Built to <span className="text-cherry-glow">win.</span>
               </>
             }
-            description="Podium finishes, packed workshops and a research symposium — proof the work travels beyond the lab."
+            description="A selection of competition wins that mark RoboManipal's journey beyond the lab."
           />
           <Reveal>
             <Link
