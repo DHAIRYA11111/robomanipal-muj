@@ -6,7 +6,7 @@ export const SITE = {
     "RoboManipal MUJ is a student-driven robotics & research community at Manipal University Jaipur, managed by the ACM SIGBED Student Chapter.",
   managedBy: "Managed by ACM SIGBED, MUJ",
   university: "Manipal University Jaipur",
-  email: "robomanipal@muj.manipal.edu",
+  email: "dhairya.2503080042@muj.manipal.edu",
   location: "Manipal University Jaipur, Dehmi Kalan, Jaipur, Rajasthan 303007",
   socials: {
     instagram: "https://www.instagram.com/robomanipal_muj/",
