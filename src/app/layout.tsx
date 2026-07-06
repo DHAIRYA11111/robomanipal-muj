@@ -62,7 +62,7 @@ export default function RootLayout({
       lang="en"
       className={`${display.variable} ${sans.variable} ${mono.variable}`}
     >
-      <body className="grain">
+      <body>
         <SmoothScrollProvider>
           <LoadingScreen />
           <PageTransition />
