@@ -6,6 +6,7 @@ import ResearchHighlights from "@/components/home/ResearchHighlights";
 import AchievementShowcase from "@/components/home/AchievementShowcase";
 import Stats from "@/components/home/Stats";
 import JoinUs from "@/components/home/JoinUs";
+import FAQ from "@/components/home/FAQ";
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <AchievementShowcase />
       <Stats />
       <JoinUs />
+      <FAQ />
     </>
   );
 }

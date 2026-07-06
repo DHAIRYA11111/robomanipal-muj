@@ -5,7 +5,7 @@ import WorkView from "@/components/work/WorkView";
 export const metadata: Metadata = {
   title: "Our Work",
   description:
-    "Explore the robots and engineering projects built by RoboManipal MUJ. Research papers are coming soon.",
+    "Explore the robot platforms built by RoboManipal MUJ. Project stories and research papers are coming soon.",
 };
 
 export default function WorkPage() {
@@ -21,7 +21,7 @@ export default function WorkPage() {
             <span className="text-cherry-glow">Research.</span>
           </>
         }
-        description="Everything we build, in one place — autonomous machines, engineering projects and a research section coming soon. Open a robot or project for the full story."
+        description="Explore every active robot platform in one place. Project stories and research papers will be published as the work reaches a shareable stage."
       />
       <WorkView />
     </>

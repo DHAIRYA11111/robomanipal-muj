@@ -166,6 +166,44 @@ function buildArm(
   group.position.y = -0.45;
 }
 
+function buildRCCar(
+  group: THREE.Group,
+  materials: Record<string, THREE.MeshStandardMaterial>,
+) {
+  addBox(group, [2.85, 0.28, 1.5], [0, -0.08, 0], materials.dark);
+  addBox(group, [1.75, 0.48, 1.32], [-0.2, 0.3, 0], materials.red);
+  addBox(group, [0.9, 0.42, 1.12], [-0.45, 0.72, 0], materials.cream, [0, 0, -0.12]);
+  addBox(group, [0.8, 0.12, 1.42], [1.35, 0.05, 0], materials.steel, [0, 0, -0.08]);
+  addBox(group, [0.12, 0.48, 1.2], [-1.35, 0.35, 0], materials.red);
+  addWheels(
+    group,
+    materials.dark,
+    [
+      [-0.92, -0.22, -0.92],
+      [-0.92, -0.22, 0.92],
+      [0.92, -0.22, -0.92],
+      [0.92, -0.22, 0.92],
+    ],
+    0.5,
+  );
+  addCylinder(group, 0.06, 0.8, [-0.9, 1.05, 0.35], materials.steel, [0, 0, -0.18]);
+}
+
+function buildRCPlane(
+  group: THREE.Group,
+  materials: Record<string, THREE.MeshStandardMaterial>,
+) {
+  addBox(group, [3.4, 0.38, 0.42], [0, 0.1, 0], materials.cream);
+  addBox(group, [1.35, 0.13, 3.75], [-0.05, 0.16, 0], materials.red);
+  addBox(group, [0.75, 0.1, 1.65], [-1.45, 0.25, 0], materials.steel);
+  addBox(group, [0.45, 0.82, 0.12], [-1.45, 0.64, 0], materials.red, [0, 0, -0.18]);
+  addCylinder(group, 0.3, 0.42, [1.82, 0.1, 0], materials.dark, [0, 0, Math.PI / 2]);
+  addBox(group, [0.08, 1.45, 0.1], [2.05, 0.1, 0], materials.steel, [Math.PI / 4, 0, 0]);
+  addBox(group, [0.08, 1.45, 0.1], [2.05, 0.1, 0], materials.steel, [-Math.PI / 4, 0, 0]);
+  addCylinder(group, 0.13, 0.78, [-0.35, -0.42, 0], materials.dark, [Math.PI / 2, 0, 0]);
+  group.rotation.z = -0.04;
+}
+
 function buildRobot(slug: string) {
   const materials = {
     red: new THREE.MeshStandardMaterial({ color: RED, metalness: 0.72, roughness: 0.26 }),
@@ -175,7 +213,9 @@ function buildRobot(slug: string) {
   };
   const group = new THREE.Group();
 
-  if (slug === "robowars-bot") buildCombat(group, materials);
+  if (slug === "rc-car") buildRCCar(group, materials);
+  else if (slug === "rc-plane") buildRCPlane(group, materials);
+  else if (slug === "robowars-bot") buildCombat(group, materials);
   else if (slug === "line-following-bot") buildLineFollower(group, materials);
   else if (slug === "multifunctional-drones") buildDrone(group, materials);
   else if (slug === "robotic-arm") buildArm(group, materials);

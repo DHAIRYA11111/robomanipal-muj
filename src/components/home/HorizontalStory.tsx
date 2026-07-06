@@ -41,14 +41,14 @@ const PANELS: Panel[] = [
   {
     chapter: "Build",
     title: "Engineering Projects",
-    body: "Embedded systems, IoT, AI applications and automation — we ship real hardware and software that runs in the lab and on the field.",
+    body: "Active engineering builds are being tested and documented before their complete project stories are published.",
     href: "/work#projects",
-    cta: "View Projects",
+    cta: "In Progress",
   },
   {
     chapter: "Machines",
     title: "Featured Robots",
-    body: "RoboSoccer, RoboWars, line-following, multifunctional drone and robotic-arm platforms.",
+    body: "RoboSoccer, RoboWars, line-following, drone, robotic-arm, RC-car and RC-plane platforms.",
     href: "/work#robots",
     cta: "Meet The Robots",
   },
@@ -101,7 +101,7 @@ export default function HorizontalStory() {
           start: "top top",
           end: () => "+=" + distance(),
           pin: true,
-          scrub: 1,
+          scrub: true,
           anticipatePin: 1,
           invalidateOnRefresh: true,
           onUpdate: (self) => {

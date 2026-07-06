@@ -3,9 +3,8 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ROBOTS } from "@/data/robots";
-import { PROJECTS } from "@/data/projects";
 import RobotCard from "@/components/cards/RobotCard";
-import ProjectCard from "@/components/cards/ProjectCard";
+import ProjectsInProgress from "@/components/work/ProjectsInProgress";
 import ResearchComingSoon from "@/components/work/ResearchComingSoon";
 import { cn } from "@/lib/utils";
 
@@ -13,7 +12,7 @@ type TabId = "robots" | "projects" | "research";
 
 const TABS: { id: TabId; label: string; count: number | string }[] = [
   { id: "robots", label: "Robots", count: ROBOTS.length },
-  { id: "projects", label: "Projects", count: PROJECTS.length },
+  { id: "projects", label: "Projects", count: "In progress" },
   { id: "research", label: "Research Papers", count: "Soon" },
 ];
 
@@ -90,11 +89,7 @@ export default function WorkView() {
               </div>
             )}
             {tab === "projects" && (
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {PROJECTS.map((p) => (
-                  <ProjectCard key={p.slug} project={p} />
-                ))}
-              </div>
+              <ProjectsInProgress />
             )}
             {tab === "research" && (
               <ResearchComingSoon />

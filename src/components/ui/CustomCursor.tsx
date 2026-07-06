@@ -11,8 +11,8 @@ export default function CustomCursor() {
 
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
-  const ringX = useSpring(x, { damping: 28, stiffness: 320, mass: 0.5 });
-  const ringY = useSpring(y, { damping: 28, stiffness: 320, mass: 0.5 });
+  const ringX = useSpring(x, { damping: 45, stiffness: 600, mass: 0.35 });
+  const ringY = useSpring(y, { damping: 45, stiffness: 600, mass: 0.35 });
 
   useEffect(() => {
     const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
@@ -73,7 +73,7 @@ export default function CustomCursor() {
             ? "rgba(237,233,221,0.95)"
             : "rgba(237,233,221,0.55)",
         }}
-        transition={{ type: "spring", damping: 22, stiffness: 280 }}
+        transition={{ type: "spring", damping: 32, stiffness: 360 }}
       >
         {label && (
           <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-cotton">

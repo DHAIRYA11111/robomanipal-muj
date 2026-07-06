@@ -5,6 +5,7 @@ import {
   Goal,
   Route,
   Plane,
+  Car,
   Bot,
   Swords,
   ArrowLeft,
@@ -22,6 +23,8 @@ const ICONS = {
   "Robo Wars": Swords,
   "Multifunctional Drones": Plane,
   "Robotic Arm": Bot,
+  "RC Car": Car,
+  "RC Plane": Plane,
 } as const;
 
 export const dynamicParams = false;

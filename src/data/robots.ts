@@ -3,7 +3,9 @@ export type RobotCategory =
   | "Robo Wars"
   | "Line Follower"
   | "Multifunctional Drones"
-  | "Robotic Arm";
+  | "Robotic Arm"
+  | "RC Car"
+  | "RC Plane";
 
 export type Robot = {
   slug: string;
@@ -165,6 +167,64 @@ export const ROBOTS: Robot[] = [
     highlights: [
       "Robotic manipulation platform",
       "Designed for hands-on development and testing",
+    ],
+  },
+  {
+    slug: "rc-car",
+    name: "RC Car",
+    codename: "RM-RCC",
+    category: "RC Car",
+    year: 2026,
+    status: "In Development",
+    tagline: "A responsive ground platform for radio-control, steering and drivetrain experiments.",
+    summary: "RoboManipal's RC car development platform.",
+    overview: [
+      "The RC Car is a compact mobile platform for developing reliable steering, throttle control and mechanical integration.",
+      "Its modular layout supports hands-on work across chassis design, electronics, radio control and future autonomy experiments.",
+    ],
+    specs: [
+      { label: "Platform", value: "Ground vehicle" },
+      { label: "Focus", value: "Radio control" },
+      { label: "Build", value: "In-house" },
+    ],
+    metrics: [
+      { label: "Status", value: "In development" },
+      { label: "Focus", value: "Mobility" },
+      { label: "Build", value: "In-house" },
+    ],
+    stack: ["Mechanical", "Electronics", "Radio control"],
+    highlights: [
+      "Modular RC ground platform",
+      "Designed for drivetrain and steering experiments",
+    ],
+  },
+  {
+    slug: "rc-plane",
+    name: "RC Plane",
+    codename: "RM-RCP",
+    category: "RC Plane",
+    year: 2026,
+    status: "In Development",
+    tagline: "A lightweight fixed-wing platform for flight-control and aerodynamics testing.",
+    summary: "RoboManipal's RC fixed-wing aircraft platform.",
+    overview: [
+      "The RC Plane gives the team a practical fixed-wing platform for learning aerodynamics, airframe construction and radio-control systems.",
+      "Flight testing will guide refinements to stability, control surfaces, weight distribution and onboard electronics.",
+    ],
+    specs: [
+      { label: "Platform", value: "Fixed-wing aircraft" },
+      { label: "Focus", value: "Flight testing" },
+      { label: "Build", value: "In-house" },
+    ],
+    metrics: [
+      { label: "Status", value: "In development" },
+      { label: "Focus", value: "Flight" },
+      { label: "Build", value: "In-house" },
+    ],
+    stack: ["Aerodynamics", "Electronics", "Radio control"],
+    highlights: [
+      "Lightweight fixed-wing platform",
+      "Built for iterative flight testing",
     ],
   },
 ];

@@ -26,7 +26,7 @@ export const NAV_LINKS = [
 ] as const;
 
 export const STATS = [
-  { label: "Robotic Platforms", value: 5, suffix: "" },
+  { label: "Robotic Platforms", value: 7, suffix: "" },
   { label: "Competition Wins", value: 3, suffix: "" },
   { label: "Team Members", value: 6, suffix: "" },
 ] as const;

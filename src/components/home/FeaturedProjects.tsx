@@ -1,12 +1,8 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { PROJECTS } from "@/data/projects";
-import ProjectCard from "@/components/cards/ProjectCard";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
+import ProjectsInProgress from "@/components/work/ProjectsInProgress";
 
 export default function FeaturedProjects() {
-  const featured = PROJECTS.slice(0, 3);
   return (
     <section
       id="featured-projects"
@@ -14,34 +10,20 @@ export default function FeaturedProjects() {
     >
       <div className="dot-bg pointer-events-none absolute inset-0 opacity-30" />
       <div className="container-wide relative py-24 md:py-32">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeading
-            index="02"
-            eyebrow="Featured Projects"
-            title={
-              <>
-                Hardware that <span className="text-cherry-glow">ships.</span>
-              </>
-            }
-            description="Embedded systems, IoT, AI and automation projects that move from whiteboard to working build."
-          />
-          <Reveal>
-            <Link
-              href="/work#projects"
-              className="link-underline inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-cotton/70 hover:text-cherry-glow"
-            >
-              All Projects <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Reveal>
-        </div>
+        <SectionHeading
+          index="02"
+          eyebrow="Projects"
+          title={
+            <>
+              Building in <span className="text-cherry-glow">public.</span>
+            </>
+          }
+          description="Active builds are being documented and tested before their full project stories go live."
+        />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {featured.map((p, i) => (
-            <Reveal key={p.slug} delay={i * 0.08}>
-              <ProjectCard project={p} />
-            </Reveal>
-          ))}
-        </div>
+        <Reveal className="mt-14">
+          <ProjectsInProgress />
+        </Reveal>
       </div>
     </section>
   );

@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/data/site";
-import { getLenis } from "@/components/providers/SmoothScrollProvider";
 import { cn } from "@/lib/utils";
 import Magnetic from "@/components/ui/Magnetic";
 
@@ -33,9 +32,10 @@ export default function Navbar() {
   }, [pathname]);
 
   useEffect(() => {
-    const lenis = getLenis();
-    if (open) lenis?.stop();
-    else lenis?.start();
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   return (
