@@ -12,7 +12,7 @@ export const SITE = {
     instagram: "https://www.instagram.com/robomanipal_muj/",
     linkedin: "https://linkedin.com/company/robomanipal-muj",
     github: "https://github.com/robomanipal",
-    email: "mailto:robomanipal@muj.manipal.edu",
+    email: "mailto:dhairya.2503080042@muj.manipal.edu",
   },
 } as const;
 
