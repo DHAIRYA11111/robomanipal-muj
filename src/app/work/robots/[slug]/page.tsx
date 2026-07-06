@@ -14,7 +14,7 @@ import {
 import { ROBOTS, getRobot } from "@/data/robots";
 import Backlink from "@/components/detail/Backlink";
 import Reveal from "@/components/ui/Reveal";
-import CoreVisual from "@/components/ui/CoreVisual";
+import RobotModel from "@/components/ui/RobotModel";
 
 const ICONS = {
   "Robo Soccer": Goal,
@@ -63,8 +63,8 @@ export default function RobotDetailPage({
         <div className="container-wide relative">
           <Backlink href="/work#robots" label="All Robots" />
 
-          <div className="mt-10 grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
-            <div>
+          <div className="mt-10 grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(22rem,0.9fr)]">
+            <div className="min-w-0">
               <Reveal className="mb-5 flex flex-wrap items-center gap-3">
                 <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-cherry-glow">
                   <Icon className="h-4 w-4" /> {robot.category}
@@ -79,7 +79,7 @@ export default function RobotDetailPage({
               </Reveal>
 
               <Reveal delay={0.05}>
-                <h1 className="text-fluid-lg font-bold uppercase leading-[0.85] tracking-tight">
+                <h1 className="text-[clamp(3rem,8vw,7rem)] font-bold uppercase leading-[0.85] tracking-tight">
                   {robot.name}
                 </h1>
               </Reveal>
@@ -106,12 +106,9 @@ export default function RobotDetailPage({
             </div>
 
             <Reveal delay={0.1}>
-              <div className="relative mx-auto aspect-square w-full max-w-md">
-                <CoreVisual />
-                <Icon
-                  className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 text-cotton/80"
-                  strokeWidth={1}
-                />
+              <div className="dot-bg relative mx-auto aspect-square w-full max-w-lg overflow-hidden rounded-full border border-cotton/10 bg-noir-800/30">
+                <div className="glow-cherry pointer-events-none absolute inset-0 opacity-60" />
+                <RobotModel slug={robot.slug} />
               </div>
             </Reveal>
           </div>

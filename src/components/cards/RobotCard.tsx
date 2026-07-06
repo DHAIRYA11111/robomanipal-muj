@@ -1,17 +1,9 @@
 import Link from "next/link";
-import { Goal, Route, Plane, Bot, Swords, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import type { Robot } from "@/data/robots";
-
-const ICONS = {
-  "Robo Soccer": Goal,
-  "Line Follower": Route,
-  "Robo Wars": Swords,
-  "Multifunctional Drones": Plane,
-  "Robotic Arm": Bot,
-} as const;
+import RobotModel from "@/components/ui/RobotModel";
 
 export default function RobotCard({ robot }: { robot: Robot }) {
-  const Icon = ICONS[robot.category] ?? Bot;
   const active = robot.status === "Active";
 
   return (
@@ -26,10 +18,7 @@ export default function RobotCard({ robot }: { robot: Robot }) {
       {/* visual */}
       <div className="dot-bg relative flex aspect-[4/3] items-center justify-center overflow-hidden">
         <div className="glow-cherry absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-        <Icon
-          className="h-20 w-20 text-cotton/25 transition-all duration-500 group-hover:scale-110 group-hover:text-cherry-glow"
-          strokeWidth={1}
-        />
+        <RobotModel slug={robot.slug} compact />
         <span className="absolute left-4 top-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-cotton/50">
           <span
             className={`h-1.5 w-1.5 rounded-full ${active ? "animate-pulse bg-cherry-glow" : "bg-cotton/30"}`}

@@ -29,10 +29,10 @@ export default function Footer() {
           </div>
           <Link
             href="/contact"
-            data-cursor="Join"
+            data-cursor="Contact"
             className="btn btn-primary"
           >
-            Join The Community <ArrowUpRight className="h-4 w-4" />
+            Contact Us <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>
 

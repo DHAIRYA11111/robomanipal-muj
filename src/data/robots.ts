@@ -24,7 +24,7 @@ export type Robot = {
 export const ROBOTS: Robot[] = [
   {
     slug: "robosoccer",
-    name: "RoboSoccer",
+    name: "RoboSoccer Bot",
     codename: "RM-SOC",
     category: "Robo Soccer",
     year: 2026,
@@ -32,7 +32,7 @@ export const ROBOTS: Robot[] = [
     tagline: "A competition robot built for fast, controlled play on the field.",
     summary: "RoboManipal's robot soccer platform.",
     overview: [
-      "RoboSoccer is RoboManipal's platform for robot-soccer competitions, bringing mechanical design, electronics and control together on the field.",
+      "RoboSoccer Bot is RoboManipal's platform for robot-soccer competitions, bringing mechanical design, electronics and control together on the field.",
       "The platform is developed and refined through hands-on testing, team collaboration and competition preparation.",
     ],
     specs: [

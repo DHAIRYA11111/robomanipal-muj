@@ -104,10 +104,10 @@ export default function Navbar() {
             <Magnetic className="hidden xl:block">
               <Link
                 href="/contact"
-                data-cursor="Join"
+                data-cursor="Contact"
                 className="btn btn-primary !px-5 !py-2.5"
               >
-                Join Us <ArrowUpRight className="h-3.5 w-3.5" />
+                Contact Us <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>
             </Magnetic>
 

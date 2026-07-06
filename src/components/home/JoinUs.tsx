@@ -31,8 +31,8 @@ export default function JoinUs() {
         <Reveal delay={0.15}>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Magnetic>
-              <Link href="/contact" data-cursor="Join" className="btn btn-primary">
-                Join The Community <ArrowUpRight className="h-4 w-4" />
+              <Link href="/contact" data-cursor="Contact" className="btn btn-primary">
+                Contact Us <ArrowUpRight className="h-4 w-4" />
               </Link>
             </Magnetic>
             <Magnetic>

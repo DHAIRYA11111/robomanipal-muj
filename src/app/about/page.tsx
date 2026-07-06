@@ -279,8 +279,8 @@ export default function AboutPage() {
             <Link href="/team" className="btn btn-primary">
               Meet The Team <ArrowUpRight className="h-4 w-4" />
             </Link>
-            <Link href="/vision" className="btn btn-ghost">
-              Our Vision
+            <Link href="/work" className="btn btn-ghost">
+              Explore Our Work
             </Link>
           </div>
         </Reveal>

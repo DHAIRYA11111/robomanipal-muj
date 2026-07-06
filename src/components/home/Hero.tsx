@@ -119,7 +119,7 @@ export default function Hero() {
           </Magnetic>
           <Magnetic>
             <Link href="/contact" className="btn btn-ghost">
-              Join The Community
+              Contact Us
             </Link>
           </Magnetic>
         </motion.div>
