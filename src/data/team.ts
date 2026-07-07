@@ -3,10 +3,10 @@ export type Member = {
 };
 
 export const MEMBERS: Member[] = [
-  { name: "Dhairya Hot" },
-  { name: "Dhairya Cool" },
-  { name: "Dhairya Best" },
-  { name: "Dhairya God" },
-  { name: "Dhairya Top" },
-  { name: "Dhairya Sexy" },
+  { name: "Arjun Kumar" },
+  { name: "Priya Singh" },
+  { name: "Vikram Patel" },
+  { name: "Neha Sharma" },
+  { name: "Rohan Gupta" },
+  { name: "Aisha Kapoor" },
 ];
